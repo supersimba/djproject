@@ -1,3 +1,4 @@
+#coding:utf-8
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
 ]
+AUTH_USER_MODEL='users.UserProfile'
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -68,7 +72,7 @@ DATABASES = {
         'ENGINE':'django.db.backends.mysql',
         'NAME':"mxonline",
         'USER':'root',
-        'PASSWORD':"simba2016",
+        'PASSWORD':"simba2017",
         'HOST':"127.0.0.1"
      }
 }
