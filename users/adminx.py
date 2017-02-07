@@ -15,7 +15,9 @@ class EmailVerifyRecordAdmin(object):
     ]
 
 class BannerAdmin(object):
-    pass
+    list_display=['title','image','url','index','add_time']
+    search_fields=['title','image','url','index']
+    list_filter=['title','image','url','index','add_time']
 
 
 xadmin.site.register(EmailVerifyRecord,EmailVerifyRecordAdmin)
