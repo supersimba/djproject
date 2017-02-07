@@ -24,14 +24,17 @@ class EmailVerifyRecord(models.Model):
     code = models.CharField(max_length=20,verbose_name=u"验证码")
     email=models.EmailField(max_length=20,verbose_name=u"邮箱")
     send_type=models.CharField(choices=(
-        ("register",u"注册"),("forget",u"找回密码")),max_length=5
+        ("register",u"注册"),("forget",u"找回密码")),max_length=15,
+        verbose_name=u"验证码类型"
     )
     # datetime.now()编译的时间
-    send_time = models.DateTimeField(default=datetime.now)
+    send_time = models.DateTimeField(default=datetime.now,verbose_name=u"发送时间")
     class Meta:
         db_table='EmailVerifyRecord'
         verbose_name=u"邮箱验证码"
         verbose_name_plural=verbose_name
+    def __unicode__(self):
+        return '{0}({1})'.format(self.code,self.email)
 
 class Banner(models.Model):
     title=models.CharField(max_length=100,verbose_name=u"标题")
