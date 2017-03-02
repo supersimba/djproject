@@ -36,6 +36,7 @@ INSTALLED_APPS = [
 ]
 AUTH_USER_MODEL='users.UserProfile'
 
+AUTHENTICATION_BACKENDS=('users.views.CustomBackend',)
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,7 +79,7 @@ DATABASES = {
         'ENGINE':'django.db.backends.mysql',
         'NAME':"mxonline",
         'USER':'root',
-        'PASSWORD':"simba2017",
+        'PASSWORD':"simba2016",
         'HOST':"127.0.0.1"
      }
 }
@@ -121,3 +122,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=(
+    os.path.join(BASE_DIR,'static'),
+)
